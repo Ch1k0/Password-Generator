@@ -1,0 +1,66 @@
+<div class="container">
+  <h1>Password Creator</h1>
+  <div class="password graybox">
+    <h2 id="password-output">nFof49Bog4oieMpe</h2>
+    <svg class="svg" viewBox="-1 -14 12 15" xmlns="http://www.w3.org/2000/svg" stroke="#2FFFE7" stroke-width="1" fill="none">
+      <path d="M3-11 1-11A1 1 0 000-10L0-1A1 1 0 001 0L6 0A1 1 0 007-1L7-2M7-2 4-2A1 1 0 013-3L3-12A1 1 0 014-13L7-13 10-10 10-3A1 1 0 019-2L7-2M10-10 8-10A1 1 0 017-11L7-13" />
+    </svg>
+  </div>
+  <div class="options graybox">
+    <form action="" method="get" class="form">
+
+      <div class="form-element slider">
+        <div class="slider-text">
+          Character Length
+        </div>
+        <output type="number" class="char-length" id="rangevalue">
+          16
+        </output>
+
+        <input id="length" type="range" name="name" min="4" max="24" value="16" oninput="rangevalue.value=value">
+      </div>
+
+      <div>
+        <label for="cbLower" class="form-element include">Include Uppercase Letters
+          <input type="checkbox" name="cbLCL" id="cbLower" checked>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div>
+        <label for="cbUpper" class="form-element include">Include Uppercase Letters
+          <input type="checkbox" name="cbUCL" id="cbUpper" checked>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div>
+        <label for="cbNums" class="form-element include">Include Numbers
+          <input type="checkbox" name="cbNum" id="cbNums" checked>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div>
+        <label for="cbSymbol" class="form-element include">Include Symbols
+          <input type="checkbox" name="cbSym" id="cbSymbol" checked>
+          <span class="checkmark"></span> 
+        </label>
+      </div>
+
+      <div class="strength">
+        <div class="strength-text">Strength</div>
+        <div class="strengthIndicator">
+          <div class="strengthIndicatorText">Strong</div>
+          <div class="indicator indicatorWeak indiFillGreen "></div>
+          <div class="indicator indicatorMedium indiFillGreen "></div>
+          <div class="indicator indicatorStrong indiFillGreen"></div>
+        </div>
+      </div>
+
+      <div class="form-elemnet">
+        <input type="submit" value="Generate &rarr;" class="generate">
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Color Pallete on coolors*/
+/* https://coolors.co/24232a-e5e4eb-a5ffaf-f9ce66-bb4430 */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  --background-color-black: #131217;
+  --background-color-blue: #101119;
+  --background-color-dark: #222730;
+  --text-color-light: #e5e4eb;
+  --text-color-gray: #858293;
+  --text-color-green: #2FFFE7;
+  --accent-color-red: #E03616;
+  --accent-color-yellow: #FFC857;
+  --accent-color-green: #2FFFE7;
+
+  background-color: var(--background-color-black);
+  color: var(--text-color-light);
+
+  font-family: "Source Code Pro", monospace;
+  font-size: 1rem;
+
+  display: grid;
+  place-content: center;
+}
+
+.container {
+  width: 380px;
+}
+
+.container h1 {
+  text-align: center;
+  color: var(--text-color-gray);
+}
+
+.graybox {
+  background-color: var(--background-color-dark);
+  padding: 1rem;
+}
+
+.password {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.password h2 {
+  font-size: 1.2rem;
+  padding-right: 1rem;
+}
+
+.password .svg {
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+}
+
+.slider {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 80% 20%;
+  grid-template-rows: repeat(2, auto);
+
+  margin-bottom: 2.5rem;
+}
+
+.slider-text {
+  font-size: 1.1rem;
+
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  
+  padding-bottom: 0.5rem;
+}
+
+.char-length {
+  color: var(--text-color-green);
+  text-shadow: 0 0 5px var(--background-color-blue);
+  font-size: 2rem;
+  padding-bottom: 0.5rem;
+
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+
+  justify-self: end;
+  
+  user-select: none;
+}
+
+#length {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  background: var(--text-color-light);
+  box-shadow: 0 0 5px 2px var(--background-color-blue);
+  border-radius: 0px;
+  background-image: linear-gradient(var(--text-color-green), var(--text-color-green));
+  background-size: 60% 100%;
+  background-repeat: no-repeat;
+}
+
+input[type="range"]::-webkit-slider-thumb,
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border: 2px solid var(--background-color-blue);
+  border-radius: 0%;
+  background: var(--text-color-green);
+  cursor: ew-resize;
+  box-shadow: 0 0 5px 2px var(--background-color-blue);
+  transition: background .3s ease-in-out;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover,
+input[type="range"]::-moz-range-thumb:hover,
+input[type="range"]::-ms-thumb:hover {
+  background: var(--text-color-green);
+}
+
+input[type=range]::-webkit-slider-runnable-track,
+input[type=range]::-moz-range-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+.include {
+  background-color: var(--background-color-blue);
+  margin: 0.5rem 0;
+  display: block;
+  position: relative;
+  
+  padding: 0.75rem;
+  padding-left: 3rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.include input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  height: 25px;
+  width: 25px;
+  background-color: var(--text-color-gray);
+  box-shadow: 0 0 5px 2px var(--background-color-blue);
+}
+
+.include:hover input ~ .checkmark {
+  background-color: var(--text-color-light);
+}
+
+.include input:checked ~ .checkmark {
+  background-color: var(--text-color-green);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.include input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.include .checkmark:after {
+  left: 8px;
+  top: 2px;
+  width: 10px;
+  height: 20px;
+  border: solid var(--background-color-black);
+  border-width: 0 5px 5px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.strength {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color-blue);
+  color: var(--text-color-gray);
+  text-transform: uppercase;
+  padding: 1rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.strength-text {
+  font-size: 1rem;
+  
+}
+
+.strengthIndicator {
+  display: flex;
+  justify-items: end;
+  align-items: center;
+}
+
+.strengthIndicatorText {
+  color: var(--text-color-light);
+  margin-right: 0.5rem;
+}
+
+.indicator {
+  width: 15px;
+  height: 35px;
+  border: 3px solid var(--text-color-light);
+  font-size: 1.3rem;
+  margin-left: 0.3rem;
+}
+
+.indiFillRed {
+  background-color: var(--accent-color-red);
+  border: 3px solid var(--accent-color-red);
+}
+
+.indiFillYellow {
+  background-color: var(--accent-color-yellow);
+  border: 3px solid var(--accent-color-yellow);
+}
+
+.indiFillGreen {
+  background-color: var(--accent-color-green);
+  border: 3px solid var(--accent-color-green);
+}
+
+.generate {
+  border: none;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--text-color-green);
+  box-shadow: 0 0 5px 2px var(--background-color-blue);
+  font-size: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+}
